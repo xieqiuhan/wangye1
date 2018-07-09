@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link href="1.css" type="text/css" rel="stylesheet"/>
+
+    <script src="move.js"></script>
+    <script>
+        window.onload=function()
+        {
+            var oJieshao=document.getElementById('jieshao');
+
+            oJieshao.onmouseover=function(){
+                startMove(oJieshao,'margin-left',0)
+            }
+            oJieshao.onmouseout=function(){
+                startMove(this,'margin-left',-150)
+            }
+
+
+
+            var miao=document.getElementById('miaoa');
+            var img1=document.getElementById('img1');
+            miao.onmouseover=img1.onmouseover=function() {
+
+                startMove(miao, 'opacity', 100, function () {
+                    startMove(img1, 'borderWidth', 20, function () {
+                        startMove(img1, 'opacity', 100)
+                    })
+                })
+            }
+
+            miao.onmouseout=img1.onmouseout=function()
+            {
+                startMove(img1,'opacity',30,function(){
+                    startMove(img1,'borderWidth',2,function(){
+                        startMove(miao,'opacity',30)
+                    });
+                });
+            };
+            var p1=document.getElementById('p1');
+            p1.onmouseover=function()
+            {
+
+                startMove(p1,'opacity',100,function(){
+                    startMove(p1,'font-size',50)
+
+                });
+            };
+            p1.onmouseout=function()
+            {
+                startMove(p1,'font-size',30,function(){
+                    startMove(p1,'opacity',30);
+                });
+            };
+
+        }
+    </script>
+
+</head>
+<body >
+<div class="top-bar">
+        <div class="logo">杂记 | 瓜瓜</div>
+        <div class="nav">
+            <ul>
+                <li class="curr"><a href="1.html">首页</a></li>
+                <li><a href="2.html">生活</a></li>
+                <li><a href="3.html">艺术</a></li>
+                <li><a href="4.html">杂谈</a></li>
+            </ul>
+        </div>
+    </div>
+        <div class="firstpage">
+            <div class="text1"><p id="p1">遇见-生活-未来</p></div>
+            <div class="img">
+            <img  id='img1' src="image/8.jpg" />
+        </div>
+        </div>
+<div class="miao">
+    <img id='miaoa' src="image/12.png"/>
+</div>
+
+    <div id="jieshao">
+        <p>我在佛前苦苦求了几千年，才发现求错了，求的是狒。</p>
+        <span></span>
+    </div>
+
+</body>
+</html>

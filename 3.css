@@ -1,0 +1,28 @@
+body {padding:0;margin:0 auto;overflow: hidden;position: relative;background: url("image/11.png") repeat-x ;
+    background-size:650px 800px;font: normal 100% Helvetica, Arial, sans-serif;}
+.top-bar{background-color:olivedrab;height:60px;}
+.top-bar .logo{font-size:2.5em;font-family: 幼圆;font-weight: bolder;color:white;line-height: 60px;}
+.top-bar .nav{position: absolute;width:400px;margin-left:800px;top:0;text-decoration:none;text-align:center;}
+.top-bar .nav li{width:80px;margin-left:10px;margin-top:10px;float: left;list-style: none;}
+.top-bar .nav  a{text-decoration:none;font-size:1.5em;}
+a:link{color:red;}
+a:visited{color:green;}
+a:hover{color:blue;text-decoration:underline;}
+a:active,a.focus{color:yellow;background-color:#ddd;text-decoration: underline;}
+.curr{background:pink;}
+#xia{height:400px;width:400px;margin-top: 5%;margin-left:0;}
+.double{height:700px;width:500px;margin-left:606px;margin-top: -450px;position: relative;}
+#container{height:700px;width:500px;margin-left:0;margin-top:0;position:absolute;}
+
+#div1_1{width:40px;height:30px;background-color: indianred;margin-left:3px;top:4px;}
+#div1_2{width:40px;height:30px;background-color: rosybrown;margin-left:3px;margin-top:24px;}
+#div1_3{width:40px;height:30px;background-color: cornflowerblue;margin-left:3px;margin-top:24px;}
+#div1_4{width:40px;height:30px;background-color: aquamarine;margin-left:3px;margin-top:24px;}
+#div1_5{width:40px;height:30px;background-color: burlywood;margin-left:3px;margin-top:24px;}
+#div1_6{width:40px;height:30px;background-color: palevioletred;margin-left:3px;margin-top:24px;}
+#div1_7{width:40px;height:30px;background-color: paleturquoise;margin-left:3px;margin-top:24px;}
+#div1_8{width:40px;height:30px;background-color: plum;margin-left:3px;margin-top:24px;}
+#div1_9{width:40px;height:30px;background-color: hotpink;margin-left:3px;margin-top:24px;}
+#div1_10{width:40px;height:30px;background-color: thistle;margin-left:3px;margin-top:24px;}
+.parent{width:200px;height:200px;margin-left:25%;margin-top:-25%;position: relative;}
+.parent img{width:150px;height:150px;margin-left: 0;margin-top: 0;position: absolute;}

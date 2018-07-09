@@ -1,0 +1,30 @@
+body {height:2000px;padding:0;margin:0 auto;overflow: hidden;position: relative;font: normal 100% Helvetica, Arial, sans-serif;}
+.top-bar{background-color:olivedrab;height:60px;}
+.top-bar .logo{font-size:2.5em;font-family: 幼圆;font-weight: bolder;color:white;line-height: 60px;}
+.top-bar .nav{position: absolute;width:400px;margin-left:800px;top:0;text-decoration:none;text-align:center;}
+.top-bar .nav li{width:80px;margin-left:10px;margin-top:10px;float: left;list-style: none;}
+.top-bar .nav  a{text-decoration:none;font-size:1.5em;}
+a:link{color:red;}
+a:visited{color:green;}
+a:hover{color:blue;text-decoration:underline;}
+a:active,a.focus{color:yellow;background-color:#ddd;text-decoration: underline;}
+.curr{background:seagreen;}
+
+.play { width:316px; height: 530px; margin-left:20%;margin-top:0; border:5px #999999 solid; background:#999999; font: 12px Arial; }
+.big_pic ul { padding: 0; margin: 0; }
+.big_pic { width: 316px; height: 400px; overflow: hidden;  background:yellow; position: relative;padding:0; }
+.big_pic li { width:316px; height: 400px; overflow: hidden; position: absolute;list-style: none; top: 0; left: 0; z-index: 0; background: url(image/loading.gif) no-repeat center center; }
+.big_pic img { width:316px;height:400px;border: 0; }
+.mark_left { width: 158px; height: 400px; position: absolute; left: 0; top: 0; background: red; filter: alpha(opacity:0); opacity: 0; z-index:3000; }
+.mark_right { width: 158px; height: 400px; position: absolute; left: 200px; top: 0; background: green; filter: alpha(opacity:0); opacity: 0; z-index:3000; }
+.big_pic .prev { width: 56px; height: 56px; background: url(image/btn1.jpg) no-repeat; position: absolute; top: 160px; left: 10px; z-index: 3001; filter:alpha(opacity:0); opacity:0; cursor: pointer; }
+.big_pic .next { width: 56px; height: 56px; background: url(image/btn2.jpg) no-repeat; position: absolute; top: 160px; right: 10px; z-index: 3001; filter:alpha(opacity:0); opacity:0; cursor: pointer; }  .big_pic .bg { width: 316px; height: 5px; background: #000; filter: alpha(opacity=60); opacity: 0.6; position: absolute; z-index: 2999; bottom: 0; left: 0; }
+.small_pic { width: 316px; height: 130px; position: relative; top:0; left: 5px; overflow: hidden; }
+.small_pic ul { height: 130px; position: absolute; top:0; left: 0; padding:0;margin:0;}
+.small_pic li { width: 98px; height: 130px; float: left; overflow: hidden;padding-right: 8px; list-style:none;background: url(image/loading.gif) no-repeat center center; cursor: pointer; filter: alpha(opacity=60); opacity: 0.6; }
+.small_pic img { width: 98px; height: 110px; border:0;}
+.hehe{width:600px;height:1000px;margin-left: 600px;margin-top: -500px;}
+#div1{width:300px;height:300px;margin-left:40px;margin-top:50px;position:fixed;}
+#btn{width:150px;height:40px;background-color: olivedrab;border:1px solid olivedrab;}
+#txt2{background-color:olivedrab;margin-top:20px;display:none;}
+#img2{width:200px;height:750px;margin-left:400px;margin-top:-60px;}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杂谈</title>
+    <link href="4.css" type="text/css" rel="stylesheet"/>
+    <script src="move2.js"></script>
+    <script>
+        window.onload=function()
+        {
+            var oDate=new Date();
+            var oTxt=document.getElementById('txt');
+            var oBtn=document.getElementById('btn');
+            var oUl=document.getElementById('ul1');
+
+            var oParent=document.getElementById('parent');
+            var oDiv=document.getElementById('div1');
+            var oDiv3=document.getElementById('div3');
+            var oDiv4=document.getElementById('div4');
+            var disX=0;
+
+            //键盘事件
+            document.onkeydown=function(ev)
+            {
+                var oEvent=event||ev;
+                
+                switch (oEvent.keyCode){
+                    case 13:
+                        oBtn.onclick();
+                        break;
+                    default:
+                        break;
+
+                }
+                
+            }
+            //滚动条
+            oDiv.onmousedown=function(ev)
+            {
+                var oEvent=ev||event;
+                disX=oEvent.clientX-oDiv.offsetLeft;
+                document.onmousemove=function(ev)
+                {
+                    var oEvent=ev||event;
+                    var l=oEvent.clientX-disX;
+                    if(l<0)
+                    {
+                        l=0;
+                    }
+                    else if(l>oParent.offsetWidth-oDiv.offsetWidth)
+                    {
+                        l=oParent.offsetWidth-oDiv.offsetWidth;
+                    }
+
+                    oDiv.style.left=l+'px';
+
+                    var scale=l/(oParent.offsetWidth-oDiv.offsetWidth);
+                    document.title=scale;
+
+                    oDiv4.style.top=-scale*(oDiv4.offsetHeight-oDiv3.offsetHeight)+'px';
+
+                };
+                document.onmouseup=function()
+                {
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                }
+                return false;
+            }
+
+            //将txt内容添加
+            oBtn.onclick=function()
+            {
+                var oLi=document.createElement('li');
+                oLi.innerHTML=oTxt.value;
+                oTxt.value='';
+
+                var aDate=document.createElement('text');
+                aDate.innerHTML=oDate.getFullYear()+'年'+(oDate.getMonth()+1)+'月'
+                    +oDate.getDate()+'日'+oDate.getHours()+'时'+oDate.getMinutes()+'分';
+                if(oUl.length>0)
+                {
+                    oUl.appendChild(oLi);
+                    oUl.appendChild(aDate);
+
+                }
+                else {
+                    oUl.insertBefore(oLi, oUl.children[0]);
+                    oUl.insertBefore(aDate,oUl.children[0]);
+
+                }
+                var iHeight=oLi.offsetHeight;
+                oLi.style.height='0';
+                startMove(oLi,{height:iHeight},function(){
+                    startMove(oLi,{opacity:100});
+                })
+            }
+        }
+    </script>
+
+</head>
+<body style="background-color: darkolivegreen;">
+<div class="top-bar">
+    <div class="logo">杂谈 | 杂记</div>
+    <div class="nav">
+        <ul>
+            <li ><a href="1.html">首页</a></li>
+            <li ><a href="2.html">生活</a></li>
+            <li><a href="3.html">艺术</a></li>
+            <li class="curr"><a href="4.html">杂谈</a></li>
+        </ul>
+    </div>
+</div>
+<div id="parent">
+    <div id="div1"></div>
+</div>
+<div id="div2">
+    <textarea id="txt" clos="50" row="40" ></textarea>
+    <input id="btn" type="button" value="发布（回车键）"/>
+</div>
+    <div id="div3">
+        <div id="div4">
+        <ul id="ul1">
+            <li></li>
+        </ul>
+        </div>
+    </div>
+</body>
+</html>

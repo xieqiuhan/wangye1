@@ -1,0 +1,21 @@
+body {padding:0;margin:0 auto;overflow: hidden;position: relative;font: normal 100% Helvetica, Arial, sans-serif;}
+.top-bar{background-color:olivedrab;height:60px;}
+.top-bar .logo{font-size:2.5em;font-family: 幼圆;font-weight: bolder;color:white;line-height: 60px;}
+.top-bar .nav{position: absolute;width:400px;margin-left:800px;top:0;text-decoration:none;text-align:center;}
+.top-bar .nav li{width:80px;margin-left:10px;margin-top:10px;float: left;list-style: none;}
+.top-bar .nav  a{text-decoration:none;font-size:1.5em;}
+a:link{color:red;}
+a:visited{color:green;}
+a:hover{color:blue;text-decoration:underline;}
+a:active,a.focus{color:yellow;background-color:#ddd;text-decoration: underline;}
+.curr{background:darkslategrey;}
+
+#parent{width:600px;height:20px;background:darkslategrey;position:relative;margin-left:40%; margin-top:10px;padding: 3px;}
+#div1{width:35px;height:35px;background:url("image/16.png");background-size:35px 35px;position:absolute;left:0;top:-6px;}
+#div2{width:300px;height:800px;margin-left:4%;margin-top:5%;}
+#txt{width:300px;height:400px;background-color:powderblue;border:1px solid powderblue;font-size: 2em;}
+#btn{background-color: teal;width:140px;height:30px;border: 2px teal solid;margin-left:160px;font-size: larger;color: hotpink;}
+#div3{width:600px;height:400px; margin-left: 40%;margin-top:-800px;position: relative;border:1px solid darkslategrey;overflow: hidden;}
+#div4{position:absolute;left:0;top:0;padding:0;}
+#ul1 li{border-bottom: 2px #999 dashed;padding:3px;list-style: none;filter:alpha(opacity:0);opacity: 0;font-size: 1.5em;color:sandybrown;}
+

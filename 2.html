@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生活</title>
+    <link href="2.css" type="text/css" rel="stylesheet"/>
+    <script src="move.js"></script>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+        window.onload=function ()
+        {
+            var oDiv=document.getElementById('playimages');
+            var oBtnPrev=oDiv.getElementsByClassName('prev')[0];
+            var oBtnNext=oDiv.getElementsByClassName('next')[0];
+            var oMarkLeft=oDiv.getElementsByClassName('mark_left')[0];
+            var oMarkRight=oDiv.getElementsByClassName( 'mark_right')[0];
+
+
+            var oDivSmall=oDiv.getElementsByClassName( 'small_pic')[0];
+            var oUlSmall=oDivSmall.getElementsByTagName('ul')[0];
+            var aLiSmall=oDivSmall.getElementsByTagName('li');
+
+            var oUlBig=oDiv.getElementsByClassName( 'big_pic')[0];
+            var aLiBig=oUlBig.getElementsByTagName('li');
+            var nowZIndex=2;
+            var now=0;
+            oUlSmall.style.width=aLiSmall.length*aLiSmall[0].offsetWidth+'px';
+
+            //左右按钮
+            oBtnPrev.onmouseover=oMarkLeft.onmouseover=function ()
+            {
+                startMove(oBtnPrev, 'opacity', 100);
+            };
+            oBtnPrev.onmouseout=oMarkLeft.onmouseout=function ()
+            {
+                startMove(oBtnPrev, 'opacity', 0);
+            };
+            oBtnNext.onmouseover=oMarkRight.onmouseover=function ()
+            {
+                startMove(oBtnNext, 'opacity', 100);
+            };
+            oBtnNext.onmouseout=oMarkRight.onmouseout=function ()
+            {
+                startMove(oBtnNext, 'opacity', 0);
+            };
+
+            //大图切换
+            for(var i=0;i<aLiSmall.length;i++)
+            {
+                aLiSmall[i].index=i;
+                aLiSmall[i].onclick=function ()
+                {
+                    if(this.index==now)return;
+
+                    now=this.index;
+
+                    tab();
+                };
+
+                aLiSmall[i].onmouseover=function ()
+                {
+                    startMove(this, 'opacity', 100);
+                };
+                aLiSmall[i].onmouseout=function ()
+                {
+                    if(this.index!=now)
+                    {
+                        startMove(this, 'opacity', 60);
+                    }
+                };
+            }
+
+            function tab()
+            {
+                aLiBig[now].style.zIndex=nowZIndex++;
+
+                for(var i=0;i<aLiSmall.length;i++)
+                {
+                    startMove(aLiSmall[i], 'opacity', 60);
+                }
+
+                startMove(aLiSmall[now], 'opacity', 100);
+
+                aLiBig[now].style.height=0;
+                startMove(aLiBig[now], 'height', 400);
+
+                if(now==0)
+                {
+                    startMove(oUlSmall, 'left', 0);
+                }
+                else if(now==aLiSmall.length-1)
+                {
+                    startMove(oUlSmall, 'left', -(now-2)*aLiSmall[0].offsetWidth);
+                }
+                else
+                {
+                    startMove(oUlSmall, 'left', -(now-1)*aLiSmall[0].offsetWidth);
+                }
+            }
+
+            oBtnPrev.onclick=function ()
+            {
+                now--;
+                if(now==-1)
+                {
+                    now=aLiSmall.length-1;
+                }
+
+                tab();
+            };
+
+            oBtnNext.onclick=function ()
+            {
+                now++;
+                if(now==aLiSmall.length)
+                {
+                    now=0;
+                }
+
+                tab();
+            };
+
+            var timer=setInterval(oBtnNext.onclick, 2000);
+
+            oDiv.onmouseover=function ()
+            {
+                clearInterval(timer);
+            };
+            oDiv.onmouseout=function ()
+            {
+                timer=setInterval(oBtnNext.onclick, 2000);
+            };
+            var oDiv1=document.getElementById('div1');
+            var oBtn1=document.getElementById('btn');
+            var oTxt2=document.getElementById('txt2');
+            oBtn1.onclick=function(){
+                if(oTxt2.style.display=='none')
+                {
+                    oTxt2.style.display='block';
+                }
+                else
+                {
+                    oTxt2.style.display='none';
+                }
+            }
+
+        };
+
+
+    </script>
+
+</head>
+<body style="background-color: darkolivegreen;">
+<div class="top-bar">
+    <div class="logo">生活 | 杂记</div>
+<div class="nav">
+    <ul>
+        <li ><a href="1.html">首页</a></li>
+        <li class="curr"><a href="2.html">生活</a></li>
+        <li><a href="3.html">艺术</a></li>
+        <li><a href="4.html">杂谈</a></li>
+    </ul>
+</div>
+</div>
+<div id="playimages" class="play">
+
+
+    <ul class="big_pic">
+
+        <div class="prev"></div>
+        <div class="next"></div>
+
+        <a class="mark_left" href="javascript:;"></a>
+        <a class="mark_right" href="javascript:;"></a>
+
+        <li style="z-index:1;"><img src="image/2-1-1.jpg" /></li>
+        <li><img src="image/2-1-2.jpg" /></li>
+        <li><img src="image/2-1-3%20.jpg" /></li>
+        <li><img src="image/2-1-4.jpg" /></li>
+        <li><img src="image/2-1-5.jpg" /></li>
+        <li><img src="image/2-1-6.jpg" /></li>
+
+    </ul>
+    <div class="small_pic">
+        <ul >
+            <li style="filter:alpha(opacity:100);opacity: 1;"><img src="image/2-1-1.jpg" /></li>
+            <li><img src="image/2-1-2.jpg" /></li>
+            <li><img src="image/2-1-3%20.jpg" /></li>
+            <li><img src="image/2-1-4.jpg" /></li>
+            <li><img src="image/2-1-5.jpg" /></li>
+            <li><img src="image/2-1-6.jpg" /></li>
+        </ul>
+    </div>
+</div>
+<div class="hehe">
+<div id="div1">
+    <input type="button" id="btn" value="点我！点我！hahahaha"/>
+    <div id="txt2">
+        家居，又称家私（也可写成傢具或傢私，可能因此而常被人误写成“傢俱”或“傢俬”），
+        是日常生活和社会活动中为起居，
+        或工作方便而配备的用具，传统的家具都是独立于房屋主体结构之外可以移动的，
+        现代很多家具已成为建筑的一个组成部分。
+    </div>
+</div>
+<img src="image/hengbiao.png" id="img2"/>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+body {padding:0;margin:0 auto;overflow: hidden;position: relative;background: url("image/6.jpg") no-repeat center;
+    background-size:auto auto;font: normal 100% Helvetica, Arial, sans-serif;}
+.top-bar{background-color:olivedrab;height:60px;}
+.top-bar .logo{font-size:2.5em;font-family: 幼圆;font-weight: bolder;color:white;line-height: 60px;}
+.top-bar .nav{position: absolute;width:400px;margin-left:800px;top:0;text-decoration:none;text-align:center;}
+.top-bar .nav li{width:80px;margin-left:10px;margin-top:10px;float: left;list-style: none;}
+.top-bar .nav  a{text-decoration:none;font-size:1.5em;}
+a:link{color:red;}
+a:visited{color:green;}
+a:hover{color:blue;text-decoration:underline;}
+a:active,a.focus{color:yellow;background-color:#ddd;text-decoration: underline;}
+.curr{background:darkturquoise;}
+#img1{width:40%;height:20%;margin-left: 30%;margin-top:5%;border:2px solid olivedrab;filter:alpha(opacity:30);opacity: 0.3;}
+.text1{width:40%;height:10%;margin-left:42.5%;}
+#p1{font-size: 2em;color:lightgoldenrodyellow;filter:alpha(opacity:30);opacity: 0.3;}
+.miao{height:200px;width:200px;margin-left:20%;margin-top:-35%;}
+.miao img{height:100px;width:100px;filter:alpha(opacity:30);opacity: 0.3;}
+#jieshao{width:150px;height:200px;background:green;position:absolute;margin-left:-150px;margin-top: -20%;}
+#jieshao span{position:absolute;left:150px;top:70px;width:60px;height:60px;background:url("image/15.png") no-repeat; background-size:60px 60px; }
